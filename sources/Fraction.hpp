@@ -34,6 +34,10 @@ namespace ariel {
             bool operator>(const Fraction& other) const;
             bool operator<(const Fraction& other) const;
             bool operator<=(const Fraction& other) const;
+            Fraction operator-(int other) const;
+            Fraction operator+(double other) const;
+            Fraction operator+(int other) const;
+            bool operator>(double other) const;
             Fraction& operator++(int);
             Fraction& operator--();
             ostream& operator<<(ostream& output);

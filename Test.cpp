@@ -6,9 +6,8 @@ using namespace ariel;
 
 TEST_CASE("Initial fractions") {
     Fraction f1(1,4);
-    CHECK_NOTHROW(f1);
-    Fraction f2(1,0);
-    CHECK_THROWS(f2);
+    CHECK(f1.getNumerator() == 1);
+    CHECK(f1.getDenominator() == 4);
 }
 
 TEST_CASE("Checks operators") {

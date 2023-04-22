@@ -5,9 +5,12 @@ using namespace std;
 using namespace ariel;
 
 TEST_CASE("Initial fractions") {
-    Fraction f1(1,4);
-    CHECK(f1.getNumerator() == 1);
+    Fraction f1(2,4);
+    CHECK(f1.getNumerator() == 2);
     CHECK(f1.getDenominator() == 4);
+    f1.reduceFraction();
+    CHECK(f1.getNumerator() == 1);
+    CHECK(f1.getDenominator() == 2);
 }
 
 TEST_CASE("Checks operators") {
@@ -23,14 +26,17 @@ TEST_CASE("Checks operators") {
     CHECK(f3.getNumerator() == 1);
     CHECK(f3.getDenominator() == 8);
     f3 = f1/f2;
-    CHECK(f3.getNumerator() == 4);
-    CHECK(f3.getDenominator() == 2);
+    CHECK(f3.getNumerator() == 2);
+    CHECK(f3.getDenominator() == 1);
+    f3 = 2.348*f1;
+    CHECK(f3.getNumerator() == 587);
+    CHECK(f3.getDenominator() == 500);
     f1++;
-    CHECK(f1.getNumerator() == 4);
-    CHECK(f2.getDenominator() == 2);
+    CHECK(f1.getNumerator() == 3);
+    CHECK(f1.getDenominator() == 2);
     --f2;
-    CHECK(f1.getNumerator() == -3);
-    CHECK(f1.getDenominator() == 4);
+    CHECK(f2.getNumerator() == -3);
+    CHECK(f2.getDenominator() == 4);
 }
 
 TEST_CASE("Complex problems") {

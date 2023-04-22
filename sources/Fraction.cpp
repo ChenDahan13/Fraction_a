@@ -147,7 +147,7 @@ istream& ariel::operator>>(istream& input, Fraction& f) {
         throw invalid_argument("Fraction was written unright");
     }
     string numStr = fraction.substr(0, pos); // Puts to string until the index of the slash
-    string denStr = fraction.substr(pos + 1); // Puts to string fron the index of the slash
+    string denStr = fraction.substr(pos + 1); // Puts to string from the index of the slash
     
     // Converts the strings to integers and updates the fraction
     f.setNumerator(stoi(numStr));
